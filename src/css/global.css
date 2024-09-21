@@ -1,0 +1,164 @@
+:root {
+	--primary-color: #c35e26;
+	--primary-complement: #45362f;
+	--plain: #f1f1f1;
+
+	--transition: 0.25s;
+}
+
+html {
+	font-size: calc(62.5% * 0.75); /* 1rem = 10px */
+}
+
+body {
+	font-family: "Poppins", sans-serif;
+	color: var(--primary-complement);
+	background-color: var(--plain);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+
+	font-size: 2rem;
+	line-height: 1.25;
+}
+
+h1 {
+	font-size: 6rem;
+}
+h2 {
+	font-size: 4.5rem;
+}
+h3 {
+	font-size: 3.5rem;
+}
+h4 {
+	font-size: 3rem;
+}
+h5 {
+	font-size: 2.5rem;
+}
+h6 {
+	font-size: 2rem;
+}
+a,
+span {
+	text-decoration: none;
+	color: inherit;
+	font-size: inherit;
+}
+
+::-webkit-scrollbar {
+	width: 1.75rem;
+}
+::-webkit-scrollbar-track {
+	background-color: var(--primary-complement);
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--plain);
+	border: solid 0.5rem var(--primary-complement);
+	border-radius: 1rem;
+	transition: background-color var(--transition);
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--primary-color);
+}
+
+.button {
+	padding: 1.5rem 4rem;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	border-radius: 10rem;
+	background-color: var(--primary-color);
+
+	font-weight: 800;
+	color: var(--plain);
+}
+
+#navigationBar {
+	position: sticky;
+	top: 0;
+	margin-top: 5rem;
+	z-index: 10;
+}
+#navigationBar > div::after {
+	content: "";
+	width: 100%;
+	height: 125%;
+	left: 0;
+	top: calc(-12.5%);
+	position: absolute;
+	background-color: var(--plain);
+	z-index: -1;
+}
+#navigationBar > div:first-child {
+	gap: 8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--primary-complement);
+
+	transition: color var(--transition);
+}
+#navigationBar > div:first-child > h5:hover {
+	color: var(--primary-color);
+}
+#navigationBar > div:first-child > h5.active {
+	color: var(--primary-color);
+}
+#navigationBar > div:first-child > a,
+#navigationBar > div:first-child > a > svg {
+	height: 8rem;
+}
+#navigationBar > div:not(:first-child) {
+	display: none;
+}
+@media (max-width: 50rem) {
+	#navigationBar > div:first-child {
+		display: none !important;
+	}
+	#navigationBar > div:not(:first-child) {
+		padding: 2rem 4rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+	}
+	#navigationBar > div:not(:first-child) > a,
+	#navigationBar > div:not(:first-child) > a > svg {
+		height: 8rem;
+	}
+	#navigationBar > div:not(:first-child) > div {
+		top: 100%;
+		left: 0;
+		width: 100%;
+		gap: 2rem;
+		padding: 2rem 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: absolute;
+		background-color: var(--primary-color);
+	}
+}
+
+.sectionName {
+	display: flex;
+	justify-content: center;
+	align-items: center !important;
+	flex-direction: column;
+	position: relative;
+}
+.sectionName::after {
+	content: "";
+	height: 1rem;
+	width: 8rem;
+	height: 0.5rem;
+	background-color: var(--primary-color);
+	position: absolute;
+	bottom: -2rem;
+}

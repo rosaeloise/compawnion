@@ -1,0 +1,51 @@
+#hero {
+	padding: 8rem 12rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+#hero > div {
+	width: 50%;
+	gap: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	flex-direction: column;
+}
+#hero > div > * {
+	line-height: 1.5;
+}
+#hero > img {
+	width: 60rem;
+}
+
+#aboutUs {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	padding: 8rem 12rem;
+	background-color: var(--primary-complement);
+	color: var(--plain);
+	gap: 12rem;
+	position: relative;
+	overflow: hidden;
+}
+#aboutUs > * {
+	width: 100%;
+	gap: 8rem;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	flex-direction: column;
+}
+#aboutUs > *:not(:first-child) {
+	width: 37.5%;
+}
+#aboutUs > svg {
+	height: 100rem;
+	right: -6.25%;
+	top: 8rem;
+	position: absolute;
+}
