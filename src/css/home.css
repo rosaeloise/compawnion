@@ -19,6 +19,21 @@
 #hero > img {
 	width: 60rem;
 }
+@media (max-width: 50rem) {
+	#hero {
+		flex-direction: column-reverse;
+		gap: 4rem;
+	}
+	#hero > div {
+		width: 100%;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+	}
+	#hero > img {
+		width: 75%;
+	}
+}
 
 #aboutUs {
 	display: flex;
@@ -32,20 +47,254 @@
 	position: relative;
 	overflow: hidden;
 }
-#aboutUs > * {
-	width: 100%;
+#aboutUs > *:not(:first-child) {
+	width: 50%;
 	gap: 8rem;
 	display: flex;
 	justify-content: center;
 	align-items: start;
 	flex-direction: column;
 }
-#aboutUs > *:not(:first-child) {
-	width: 37.5%;
+#aboutUs > * {
+	width: 100%;
 }
 #aboutUs > svg {
 	height: 100rem;
-	right: -6.25%;
-	top: 8rem;
+	top: calc(50% - 50rem + 10rem);
+	right: 0;
 	position: absolute;
+}
+@media (max-width: 50rem) {
+	#aboutUs {
+		padding: 8rem 4rem;
+	}
+	#aboutUs > * {
+		flex-direction: column;
+	}
+	#aboutUs > *:not(:first-child) {
+		width: 100%;
+	}
+	#aboutUs > * {
+		z-index: 5;
+	}
+	#aboutUs > svg {
+		height: 200%;
+		top: -50%;
+		z-index: 0 !important;
+	}
+}
+
+#compawnion {
+	padding: 8rem 12rem;
+	gap: 12rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+#compawnion svg {
+	height: 20rem;
+}
+#compawnion > div {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 4rem;
+}
+#compawnion > div > #features {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	flex-direction: row;
+}
+#compawnion > div > #features > .featureCard {
+	width: 20rem;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 4rem;
+}
+#compawnion > p {
+	text-align: center;
+}
+@media (max-width: 50rem) {
+	#compawnion {
+		gap: 4rem;
+		padding: 8rem 4rem;
+	}
+	#compawnion > div > #features {
+		gap: 4rem;
+		flex-direction: column;
+	}
+	#compawnion > div > #features > .featureCard {
+		width: 100%;
+		gap: 2rem;
+	}
+	#compawnion > div > #features > .featureCard > svg {
+		height: 10rem;
+	}
+}
+
+#rescues {
+	padding: 8rem 12rem;
+	gap: 12rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: var(--primary-complement);
+	color: var(--plain);
+}
+#rescues > #dogs {
+	width: 100%;
+	display: flex;
+	gap: 4rem;
+	justify-content: space-around;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+#rescues > #dogs > .dogCard {
+	width: 24rem;
+	padding-bottom: 2rem;
+	border-radius: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	color: var(--primary-color);
+	background-color: var(--plain);
+	gap: 2rem;
+	overflow: hidden;
+}
+#rescues > #dogs > .dogCard > img {
+	width: 24rem;
+	height: 20rem;
+	object-fit: cover;
+}
+#rescues > #dogs > .dogCard > h5 {
+	width: 100%;
+	word-wrap: break-word;
+	text-align: center;
+}
+@media (max-width: 50rem) {
+	#rescues {
+		padding: 8rem 4rem;
+	}
+	#rescues > #dogs {
+		gap: 4rem;
+		flex-direction: column;
+	}
+	#rescues > #dogs > .dogCard {
+		width: 100%;
+	}
+	#rescues > #dogs > .dogCard > img {
+		width: 100%;
+		height: 20rem;
+	}
+}
+
+#help {
+	padding: 8rem 12rem;
+	gap: 12rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+#help > div {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: row;
+	gap: 4rem;
+}
+#help > div > div {
+	width: 48rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 4rem;
+	padding: 4rem 2rem;
+	color: var(--plain);
+	border: 0.5rem solid var(--primary-complement);
+	border-radius: 1rem;
+	position: relative;
+}
+#help > div > div::after {
+	content: "";
+	height: 100%;
+	width: 100%;
+	display: block;
+	position: absolute;
+	background-color: var(--primary-complement);
+	opacity: 0.75;
+	z-index: -1;
+}
+#help > div > div:first-child::before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	display: block;
+	position: absolute;
+	background: url('../assets/Adopt.png');
+	background-size: cover;
+	background-position: center;
+	z-index: -2;
+}
+#help > div > div:last-child::before {
+	content: "";
+	height: 100%;
+	width: 100%;
+	display: block;
+	position: absolute;
+	background: url('../assets/Donate.png');
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+}
+@media (max-width: 50rem) {
+	#help {
+		padding: 8rem 8rem;
+	}
+	#help > div {
+		flex-direction: column;
+	}
+	#help > div > div {
+		width: 100%;
+	}
+}
+
+#footer {
+	padding: 4rem 12rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: var(--primary-color);
+	color: var(--plain);
+	gap: 2rem;
+}
+#footer > svg {
+	height: 4rem;
+}
+#footer > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 4rem;
+}
+#footer > div > h5 {
+	color: var(--plain);
+}
+#footer > div > h5:hover {
+	color: var(--primary-complement);
 }

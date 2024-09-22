@@ -5,7 +5,7 @@ class NavigationBar extends React.Component {
 		const navigationBar = document.getElementById('navigationBar');
 		if (this.props.active && navigationBar.querySelector(`#${this.props.active}`)) {
 			navigationBar.querySelectorAll('h5').forEach(element => element.classList.remove('active'));
-			navigationBar.querySelector(`#${this.props.active}`).classList.add('active');
+			navigationBar.querySelectorAll(`#${this.props.active}`).forEach(element => element.classList.add('active'));
 		};
 	};
 
@@ -48,6 +48,13 @@ class NavigationBar extends React.Component {
 						</svg>
 					</a>
 					<input type='checkbox' id='menu' />
+					<label htmlFor='menu'>
+						<svg viewBox="0 0 30 30">
+							<path d="M1 8.36842C1 7.06038 2.04467 6 3.33333 6H26.6667C27.9553 6 29 7.06038 29 8.36842C29 9.67646 27.9553 10.7368 26.6667 10.7368H3.33333C2.04467 10.7368 1 9.67646 1 8.36842Z" fill="var(--primary-color)" />
+							<path d="M1 15C1 13.692 2.04467 12.6316 3.33333 12.6316H26.6667C27.9553 12.6316 29 13.692 29 15C29 16.308 27.9553 17.3684 26.6667 17.3684H3.33333C2.04467 17.3684 1 16.308 1 15Z" fill="var(--primary-color)" />
+							<path d="M1 21.6316C1 20.3235 2.04467 19.2632 3.33333 19.2632H26.6667C27.9553 19.2632 29 20.3235 29 21.6316C29 22.9396 27.9553 24 26.6667 24H3.33333C2.04467 24 1 22.9396 1 21.6316Z" fill="var(--primary-color)" />
+						</svg>
+					</label>
 					<div>
 						<h5 id='home'><a href='home' title='home'>Home</a></h5>
 						<h5 id='adopt'><a href='adopt' title='adopt'>Adopt</a></h5>
