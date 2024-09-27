@@ -103,3 +103,10 @@
 	left: -12.5vw;
 	z-index: -1;
 }
+@media (max-width: 50rem) {
+	#pawBackground {
+		width: 100vw;
+		left: -12.5vw;
+		bottom: -75%;
+	}
+}
