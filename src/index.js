@@ -11,6 +11,7 @@ import './css/global.css';
 
 import Components from './pages/Components';
 import Home from './pages/Home';
+import Adopt from './pages/Adopt';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,8 @@ root.render(
 				<Route path='/components' element={<Components />} />
 				<Route path='/home' element={<Home />} />
 				<Route path='/' element={<Home />} />
+				<Route path='/adopt' element={<Adopt />} />
+				
 			</Routes>
 		</BrowserRouter>
 	</React.StrictMode>

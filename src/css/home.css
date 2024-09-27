@@ -43,7 +43,7 @@
 	padding: 8rem 12rem;
 	background-color: var(--primary-complement);
 	color: var(--plain);
-	gap: 12rem;
+	gap: 4rem;
 	position: relative;
 	overflow: hidden;
 }
@@ -143,7 +143,7 @@
 
 #rescues {
 	padding: 8rem 12rem;
-	gap: 12rem;
+	gap: 4rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -153,34 +153,10 @@
 }
 #rescues > #dogs {
 	width: 100%;
-	display: flex;
-	gap: 4rem;
-	justify-content: space-around;
-	align-items: stretch;
-	flex-wrap: wrap;
-}
-#rescues > #dogs > .dogCard {
-	width: 24rem;
-	padding-bottom: 2rem;
-	border-radius: 1rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-direction: column;
-	color: var(--primary-color);
-	background-color: var(--plain);
-	gap: 2rem;
-	overflow: hidden;
-}
-#rescues > #dogs > .dogCard > img {
-	width: 24rem;
-	height: 20rem;
-	object-fit: cover;
-}
-#rescues > #dogs > .dogCard > h5 {
-	width: 100%;
-	word-wrap: break-word;
-	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+	grid-gap: 4rem;
+	justify-items: center;
 }
 @media (max-width: 50rem) {
 	#rescues {
@@ -201,7 +177,7 @@
 
 #help {
 	padding: 8rem 12rem;
-	gap: 12rem;
+	gap: 4rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -270,31 +246,4 @@
 	#help > div > div {
 		width: 100%;
 	}
-}
-
-#footer {
-	padding: 4rem 12rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	background-color: var(--primary-color);
-	color: var(--plain);
-	gap: 2rem;
-}
-#footer > svg {
-	height: 4rem;
-}
-#footer > div {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: row;
-	gap: 4rem;
-}
-#footer > div > h5 {
-	color: var(--plain);
-}
-#footer > div > h5:hover {
-	color: var(--primary-complement);
 }

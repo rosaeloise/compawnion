@@ -3,6 +3,8 @@
 	--primary-complement: #45362f;
 	--plain: #f1f1f1;
 
+	--white: #ffffff;
+
 	--transition: 0.25s;
 }
 
@@ -204,6 +206,7 @@ span {
 		height: 6rem;
 		width: 6rem;
 		z-index: 20;
+		cursor: pointer;
 	}
 	#navigationBar > div:not(:first-child) > input[type='checkbox'] {
 		display: none;
@@ -229,12 +232,94 @@ span {
 	text-align: center;
 	position: relative;
 }
+.sectionName.underlined {
+	margin-bottom: 4rem;
+}
 .sectionName.underlined::after {
 	content: '';
 	width: 8rem;
-	height: 0.5rem;
+	height: 1rem;
 	left: calc(50% - 4rem);
+	border-radius: 0.5rem;
 	background-color: var(--primary-color);
 	position: absolute;
 	bottom: -2rem;
+}
+
+.petCard {
+	width: 24rem;
+	padding-bottom: 2rem;
+	border: solid 0.5rem var(--white);
+	border-radius: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	background-color: var(--white);
+	gap: 2rem;
+	overflow: hidden;
+}
+.petCard > img {
+	width: 24rem;
+	height: 20rem;
+	object-fit: cover;
+}
+.petCard > h5 {
+	width: 100%;
+	color: var(--primary-color);
+	word-wrap: break-word;
+	text-align: center;
+}
+.petCard > p {
+	width: 100%;
+	color: var(--primary-complement);
+	word-wrap: break-word;
+	text-align: center;
+}
+.petCard.dark {
+	border: solid 0.5rem var(--primary-complement);
+	background-color: var(--primary-complement);
+}
+.petCard.dark > h5,
+.petCard.dark > p {
+	color: var(--plain);
+}
+.petCard.dark > .button {
+	background-color: var(--primary-complement);
+	color: var(--plain);
+	border: solid 0.5rem var(--plain);
+}
+.petCard.dark > .button:hover {
+	color: var(--primary-color);
+	border: solid 0.5rem var(--primary-color);
+}
+
+#footer {
+	padding: 4rem 12rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: var(--primary-color);
+	color: var(--plain);
+	gap: 2rem;
+}
+#footer > svg {
+	height: 4rem;
+}
+#footer > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 4rem;
+}
+#footer > div > h5 {
+	color: var(--plain);
+}
+#footer > div > h5:hover {
+	color: var(--primary-complement);
+}
+#footer > div > h5.active {
+	color: var(--primary-complement);
 }
