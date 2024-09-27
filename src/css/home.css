@@ -229,7 +229,7 @@
 	position: relative;
 }
 #help > div > div::after {
-	content: "";
+	content: '';
 	height: 100%;
 	width: 100%;
 	display: block;
@@ -239,7 +239,7 @@
 	z-index: -1;
 }
 #help > div > div:first-child::before {
-	content: "";
+	content: '';
 	height: 100%;
 	width: 100%;
 	display: block;
@@ -250,7 +250,7 @@
 	z-index: -2;
 }
 #help > div > div:last-child::before {
-	content: "";
+	content: '';
 	height: 100%;
 	width: 100%;
 	display: block;
