@@ -1,4 +1,5 @@
 #hero {
+	min-height: 100vh;
 	padding: 8rem 12rem;
 	display: flex;
 	justify-content: center;
@@ -36,6 +37,7 @@
 }
 
 #aboutUs {
+	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
@@ -85,6 +87,7 @@
 }
 
 #compawnion {
+	min-height: 100vh;
 	padding: 8rem 12rem;
 	gap: 12rem;
 	display: flex;
@@ -142,6 +145,7 @@
 }
 
 #rescues {
+	min-height: 100vh;
 	padding: 8rem 12rem;
 	gap: 4rem;
 	display: flex;
@@ -176,6 +180,7 @@
 }
 
 #help {
+	min-height: 100vh;
 	padding: 8rem 12rem;
 	gap: 4rem;
 	display: flex;
