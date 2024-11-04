@@ -35,9 +35,9 @@ class Footer extends React.Component {
 
 				<div>
 					<h5 id='home'><a href='home' title='home'>Home</a></h5>
+					<h5 id='about'><a href='about' title='about'>About</a></h5>
 					<h5 id='adopt'><a href='adopt' title='adopt'>Adopt</a></h5>
 					<h5 id='app'><a href='app' title='app'>App</a></h5>
-					<h5 id='about'><a href='about' title='about'>About</a></h5>
 				</div>
 			</footer>
 		)

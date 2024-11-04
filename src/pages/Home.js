@@ -30,7 +30,7 @@ class Home extends React.Component {
 			});
 			const res = await response.json();
 
-			const pets = res.map((item) => ({
+			const pets = res.slice(0, 5).map((item) => ({
 				image: item.personal.picture,
 				name: item.personal.name,
 				description: item.background.rescueStory,
