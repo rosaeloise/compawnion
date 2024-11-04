@@ -30,7 +30,8 @@ class Home extends React.Component {
 			});
 			const res = await response.json();
 
-			const pets = res.slice(0, 5).map((item) => ({
+			const shuffledPets = res.sort(() => 0.5 - Math.random());
+			const pets = shuffledPets.slice(0, 5).map((item) => ({
 				image: item.personal.picture,
 				name: item.personal.name,
 				description: item.background.rescueStory,
@@ -47,7 +48,17 @@ class Home extends React.Component {
 			});
 		} catch (error) {
 			console.error('Error fetching pets:', error);
-		}
+		};
+
+		const hero = document.getElementById('hero');
+		const navigationBar = document.getElementById('navigationBar');
+
+		const changeHeroHeight = () => {
+			hero.style.minHeight = `calc(100vh - ${navigationBar.clientHeight}px - 16rem)`;
+		};
+
+		window.addEventListener('resize', changeHeroHeight);
+		changeHeroHeight();
 	}
 
 	render() {
