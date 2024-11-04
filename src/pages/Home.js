@@ -11,6 +11,45 @@ import HomepageHero from '../assets/Homepage Hero.png';
 import '../css/home.css';
 
 class Home extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			pets: [],
+			loaded: false,
+		};
+	}
+
+	async componentDidMount() {
+		try {
+			const response = await fetch('http://localhost:3000/ra', {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+			const res = await response.json();
+
+			const pets = res.map((item) => ({
+				image: item.personal.picture,
+				name: item.personal.name,
+				description: item.background.rescueStory,
+				href: '/rescues/' + item.petId,
+				rfid: item.rfidTag,
+				petId: item.id,
+			}));
+
+			console.log(pets);
+
+			this.setState({
+				pets: pets,
+				loaded: true,
+			});
+		} catch (error) {
+			console.error('Error fetching pets:', error);
+		}
+	}
+
 	render() {
 		return (
 			<>
@@ -114,38 +153,15 @@ class Home extends React.Component {
 				<section id='rescues'>
 					<SectionName underline='true'>Meet our Recues!</SectionName>
 					<div id='dogs'>
-						<PetCard
-							image='https://us-tuna-sounds-images.voicemod.net/08e91ee3-5f40-4735-8197-b755f783fb36-1685115358169.jpg'
-							name='Shrek'
-							description='Big green ogre'
-							href='aboutMe'
-						/>
-						<PetCard
-							image='https://images.genius.com/65d19f8d1b0f0140e9ad53f9e087e3ca.720x720x1.jpg'
-							name='Gedagedigedagedago'
-							description='Gedagedigedagedago'
-							href='aboutMe'
-						/>
-						<PetCard
-							image='https://media.cnn.com/api/v1/images/stellar/prod/screen-shot-2024-07-25-at-10-27-16-am.jpg?c=16x9&q=h_833,w_1480,c_fill'
-							name='Skibidi toilet'
-							description='Skibidi toilet'
-							href='aboutMe'
-						/>
-						<PetCard
-							image='https://ichef.bbci.co.uk/news/480/cpsprodpb/ea72/live/34e16bc0-5ba3-11ef-9fac-8522b8016c23.jpg.webp'
-							name='SEX!!!!'
-							description='Robin Padilla'
-							href='aboutMe'
-						/>
-						<PetCard
-							image='https://www.rappler.com/tachyon/2024/08/sara-duterte-congress-ovp-budget-hearing-august-27-2024-004-scaled.jpg'
-							name='Confidential Funds'
-							description='Confidential Funds'
-							href='aboutMe'
-						/>
+						{this.state.loaded ? this.state.pets.map((pet) => (
+							<PetCard
+								image={pet.image}
+								name={pet.name}
+								description={pet.description}
+							/>
+						)) : <p>Loading...</p>}
 					</div>
-					<Button href='viewAll' title='viewAll'>View All</Button>
+					<Button href='adopt' title='viewAll'>View All</Button>
 				</section>
 
 

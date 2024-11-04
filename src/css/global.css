@@ -106,6 +106,7 @@ span {
 	position: sticky;
 	top: -1px;
 	margin-top: 5rem;
+	padding: 2rem 12rem;
 	z-index: 10;
 }
 #navigationBar > div::after {
@@ -135,7 +136,7 @@ span {
 }
 #navigationBar > div:first-child > a,
 #navigationBar > div:first-child > a > svg {
-	height: 8rem;
+	height: 6rem;
 }
 #navigationBar > div:not(:first-child) {
 	display: none;
