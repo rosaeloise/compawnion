@@ -31,7 +31,7 @@ class Adopt extends React.Component {
 	  window.addEventListener('resize', moveHeader);
 
 	  try {
-		  const response = await fetch('http://localhost:3000/ra', {
+		  const response = await fetch('https://compawnion-backend.onrender.com/ra', {
 			  method: 'GET',
 			  headers: {
 				  'Content-Type': 'application/json',
