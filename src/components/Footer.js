@@ -31,7 +31,7 @@ class Footer extends React.Component {
 					<path d='M280 31.3254C280 33.273 278.421 34.8518 276.474 34.8518C275.29 34.8518 274.186 34.2584 273.533 33.2716L270.172 28.1931C267.825 24.6466 262.303 26.3083 262.303 30.5611V32.1411C262.303 33.6382 261.089 34.8518 259.592 34.8518C258.095 34.8518 256.882 33.6382 256.882 32.1411V11.3086C256.882 9.36178 258.46 7.78357 260.407 7.78357C261.591 7.78357 262.696 8.378 263.348 9.36601L266.702 14.4439C269.048 17.997 274.579 16.3356 274.579 12.0775V10.4943C274.579 8.9972 275.792 7.78357 277.289 7.78357C278.786 7.78357 280 8.9972 280 10.4943V31.3254Z' fill='var(--primary-complement)' />
 				</svg>
 				<h5>Adoption Management System</h5>
-				<p><a href='mailto:compawnion@gmail.com'>compawnion@gmail.com</a></p>
+				<p><a href='mailto:barkcodecompawnion@gmail.com'>barkcodecompawnion@gmail.com</a></p>
 
 				<div>
 					<h5 id='home'><a href='home' title='home'>Home</a></h5>
