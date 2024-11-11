@@ -31,7 +31,7 @@ class RescuedInfo extends React.Component {
 
 	componentDidMount() {
 		// Get pet ID from URL
-		const petIDFromURL = window.location.hash.split('/').pop();
+		const petIDFromURL = window.location.href.split('/').pop();
 		if (petIDFromURL) {
 			fetch(`http://localhost:3000/ra/${petIDFromURL}`, {
 				method: 'GET',
@@ -112,49 +112,16 @@ class RescuedInfo extends React.Component {
 						<h4>Rescued Pet Infotmation</h4>
 						<div>
 							<Button
-								title='Update'
-								id='update'
-							/>
-							<Button
-								title='Cancel'
+								title='Back'
 								theme='dark'
-
-								onClick={() => {
-									window.location.hash = '/rescues';
-								}}
+								href='/adopt'
 							/>
 						</div>
 					</header>
 
 					<section id='basicInfo'>
 						<div id='image'>
-							<input type='file' name='imageInput' id='imageInput' accept="image/*" />
-							<div id='img' onClick={() => {
-								const imageInput = document.getElementById('imageInput');
-								imageInput.onchange = () => {
-									const file = imageInput.files[0];
-									const img = document.getElementById('img');
-									const reader = new FileReader();
-
-									reader.onload = (e) => {
-										img.style.backgroundImage = `url(${e.target.result})`;
-									};
-
-									if (file) reader.readAsDataURL(file);
-								};
-
-								imageInput.click();
-							}} />
-							<Button
-								title='Upload Image'
-								theme='dark'
-								fill='outline'
-
-								onClick={() => {
-									const img = document.getElementById('img');
-									img.click();
-								}}
-							/>
+							<div id='img' />
 						</div>
 
 						<div>
