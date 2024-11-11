@@ -25,7 +25,7 @@ root.render(
 				<Route path='/' element={<Home />} />
 				<Route path='/adopt' element={<Adopt />} />
 				<Route path='/rescues/:id' element={<RescuedInfo />} />
-				<Route path='/application' element={<ApplicationForm />} />
+				<Route path='/application/:id' element={<ApplicationForm />} />
 				
 			</Routes>
 		</BrowserRouter>
