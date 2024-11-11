@@ -1,33 +1,21 @@
 import React from 'react';
+
 import Button from '../components/Button';
 import FormInput from '../components/FormInput';
+
 import '../css/applicationForm.css';
 
 class ApplicationForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			vaccinationCount: 1,
-			vaccination: [
-				{
-					name: null,
-					date: null,
-					expiry: null
-				}
-			],
-			medicalHistoryCount: 1,
-			medicalHistory: [
-				{
-					date: null,
-					procedure: null,
-					notes: null
-				}
-			],
+			loading: true,
 			petID: 0
 		};
 	}
 
 	componentDidMount() {
+		//Get Rescue Animal Information
 		const petIDFromURL = window.location.href.split('/').pop();
 		if (petIDFromURL) {
 			fetch(`http://localhost:3000/ra/${petIDFromURL}`, {
@@ -35,7 +23,9 @@ class ApplicationForm extends React.Component {
 				headers: {
 					'Content-Type': 'application/json'
 				}
-			}).then(res => res.json()).then(res => {
+			})
+				.then(res => res.json())
+				.then(res => {
 				const personal = res.personal;
 				const background = res.background;
 
@@ -52,13 +42,6 @@ class ApplicationForm extends React.Component {
 				document.getElementById('rescueDate').value = background.rescueDate;
 				document.getElementById('weight').value = background.weight;
 				document.getElementById('size').value = background.size;
-
-				this.setState({
-					vaccinationCount: background.vaccination.length,
-					vaccination: background.vaccination,
-					medicalHistoryCount: background.medicalHistory.length,
-					medicalHistory: background.medicalHistory
-				});
 
 				const typeElement = document.getElementById('type');
 				const breedElement = document.getElementById('breed');
@@ -92,6 +75,86 @@ class ApplicationForm extends React.Component {
 				updateBreedOptions();
 			});
 		}
+
+		// const submitButton = document.getElementById('submit');
+		// submitButton.addEventListener('click', () => {
+		// 	const applicationType = document.getElementById('applicationType').value;
+		// 	const appPetID = document.getElementById('appPetID').value;
+		// 	const agreement = document.getElementById('agreement').checked;
+		// 	const paymentAgreement = document.getElementById('paymentAgreement').checked;
+
+
+		// 	const firstName = document.getElementById('fistName').value;
+		// 	const middleName = document.getElementById('middleName').value;
+		// 	const lastName = document.getElementById('lastName').value;
+		// 	const birthdate = document.getElementById('birthdate').value;
+		// 	const occupation = document.getElementById('occupation').value;
+		// 	const country = document.getElementById('country').value;
+		// 	const province = document.getElementById('province').value;
+		// 	const municipality = document.getElementById('municipality').value;
+		// 	const barangay = document.getElementById('Barangay').value;
+		// 	const street = document.getElementById('street').value;
+		// 	const lot = document.getElementById('lot').value;
+		// 	const email = document.getElementById('email').value;
+		// 	const phoneNum = document.getElementById('phoneNum').value;
+		// 	const facebook = document.getElementById('facebook').value;
+
+		// 	const dwellingType = document.getElementById('dwellingType').value;
+		// 	const ownership = document.getElementById('ownership').value;
+		// 	const numberOfHouseMembers = document.getElementById('numberOfHouseMembers').value;
+		// 	const numberOfPets = document.getElementById('numberOfPets').value;
+		// 	const planningToMoveOut = document.getElementById('planningToMoveOut').value;
+		// 	const petsAllowedInHouse = document.getElementById('petsAllowedInHouse').value;
+
+		// 	const petOwnershipExperience = document.getElementById('petOwnershipExperience').value;
+		// 	const veterinaryClinicName = document.getElementById('veterinaryClinicName').value;
+
+		// 	const data = {
+		// 		applicationType: applicationType,
+		// 		appPetID: appPetID,
+		// 		agreement: agreement,
+		// 		paymentAgreement: paymentAgreement,
+		// 		// applicant: {
+		// 		// 	firstName: firstName,
+		// 		// 	middleName: middleName,
+		// 		// 	lastName: lastName,
+		// 		// 	birthdate: birthdate,
+		// 		// 	occupation: occupation,
+		// 		// 	country: country,
+		// 		// 	province: province,
+		// 		// 	municipality: municipality,
+		// 		// 	barangay: barangay,
+		// 		// 	street: street,
+		// 		// 	lot: lot,
+		// 		// 	email: email,
+		// 		// 	phoneNum: phoneNum,
+		// 		// 	facebook: facebook
+		// 		// },
+		// 		dwelling: {
+		// 			dwellingType: dwellingType,
+		// 			ownership: ownership,
+		// 			numberOfHouseMembers: numberOfHouseMembers,
+		// 			numberOfPets: numberOfPets,
+		// 			planningToMoveOut: planningToMoveOut,
+		// 			petsAllowedInHouse: petsAllowedInHouse,
+		// 		},
+		// 		petOwnershipExperience,
+		// 		veterinaryClinicName
+		// 	};
+
+		// 	fetch('http://localhost:3000/application', {
+		// 		method: 'POST',
+		// 		headers: {
+		// 			'Content-Type': 'application/json'
+		// 		},
+		// 		body: JSON.stringify(data)
+		// 	})
+		// 		.then(res => res.json())
+		// 		.then(res => {
+		// 			window.location.href = '/adopt';
+		// 		});
+		// });
+
 	}
 
 	render() {
@@ -132,16 +195,16 @@ class ApplicationForm extends React.Component {
 							/>
 						</div>
 
-						<h5>Compawnion App Agreement</h5>
+						{/* <h5>Compawnion App Agreement</h5>
 						<p>Application form agreement example here. Do you agree with conditions?</p>
 						<div className='formCheckbox'>
 							<FormInput
 								label='I agree to the terms and conditions'
 								type='checkbox'
-								id='agreement'
-								name='agreement'
+								id='compawnionagreement'
+								name='compawnionagreement'
 							/>
-						</div>
+						</div> */}
 
 						<div>
 							<FormInput
@@ -166,8 +229,8 @@ class ApplicationForm extends React.Component {
 							<FormInput
 								label='App Pet ID (For existing Compawnion users only)'
 								type='text'
-								id='applicationAppId'
-								name='applicationAppId'
+								id='appPetID'
+								name='appPetID'
 							/>
 
 						</div>
@@ -572,9 +635,10 @@ class ApplicationForm extends React.Component {
 
 					<section id='action'>
 						<Button
-							title='Adopt'
+							title='Submit'
 							theme='light'
-							href={`/application/${this.state.petID}`}
+							id='submit'
+							href={`/adopt`}
 						/>
 					</section>
 				</form>
