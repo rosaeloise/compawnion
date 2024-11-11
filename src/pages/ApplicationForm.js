@@ -48,6 +48,7 @@ class ApplicationForm extends React.Component {
 				document.getElementById('gender').value = personal.gender;
 				document.getElementById('ageYear').value = personal.age.year;
 				document.getElementById('ageMonth').value = personal.age.month;
+				document.getElementById('img').style.backgroundImage = `url(${personal.picture})`;
 
 				document.getElementById('personality').value = background.attributes;
 				document.getElementById('backgroundStory').value = background.rescueStory;
@@ -100,7 +101,7 @@ class ApplicationForm extends React.Component {
 		return (
 			<>
 				<form id='rescuedInfoMain'>
-					<header id='headerSection'>
+					<header id='headerForm'>
 						<h4>Application Form</h4>
 						<div>
 							<Button
@@ -111,13 +112,35 @@ class ApplicationForm extends React.Component {
 						</div>
 					</header>
 
-					<section id='basicInfo'>
+					<section id='applicationInfo'>
+						<h6>Application Form Agreement</h6>
+						<p>Application form agreement example here. Do you agree with conditions?</p>
+						<div className='formCheckbox'>
+							<FormInput
+								label='I agree to the terms and conditions'
+								type='checkbox'
+								id='agreement'
+								name='agreement'
+							/>
+						</div>
+
+						<h6>Adoption Fee Payment Agreement</h6>
+						<p>Adoption fee payment agreement example here. Do you agree with conditions?</p>
+						<div className='formCheckbox'>
+							<FormInput
+								label='I agree to the terms and conditions'
+								type='checkbox'
+								id='paymentAgreement'
+								name='paymentAgreement'
+							/>
+						</div>
+
 						<div>
 							<FormInput
 								label='Application Type'
 								type='dropdown'
-								id='name'
-								name='name'
+								id='applicationType'
+								name='applicationType'
 
 								options={[
 									{
@@ -131,15 +154,62 @@ class ApplicationForm extends React.Component {
 								]}
 							/>
 							<div>
-								<h6>
-									Application Form Agreement
-								</h6>
 							</div>
+							<FormInput
+								label='App Pet ID (For existing Compawnion users only)'
+								type='text'
+								id='applicationAppId'
+								name='applicationAppId'
+							/>
+
+						</div>
+
+					</section>
+
+					<section id='basicInfo'>
+						<h6>Pet Information</h6>
+						<div id='image'>
+							<div id='img' />
+						</div>
+						<div className='petForm'>
+							<FormInput
+								label='Pet ID'
+								type='text'
+								id='petID'
+								name='petID'
+								disabled={true}
+							/>
 							<FormInput
 								label='Type'
 								type='text'
 								id='type'
 								name='type'
+								disabled={true}
+							/>
+							<span>
+								<FormInput
+									label='Breed'
+									type='text'
+									id='breed'
+									name='breed'
+									placeholder='Select breed'
+									disabled={true}
+								/>
+							</span>
+						</div>
+						<div className='petForm'>
+							<FormInput
+								label='Name'
+								type='text'
+								id='name'
+								name='name'
+								disabled={true}
+							/>
+							<FormInput
+								label='Gender'
+								type='text'
+								id='gender'
+								name='gender'
 								disabled={true}
 							/>
 							<span>
@@ -158,32 +228,33 @@ class ApplicationForm extends React.Component {
 									name='ageMonth'
 									disabled={true}
 								/>
-								<h6>Months</h6>
 							</span>
 						</div>
-						<div>
+						<div className='petForm'>
 							<FormInput
-								label='Pet ID'
+								label='Weight'
 								type='text'
-								id='petID'
-								name='petID'
+								id='weight'
+								name='weight'
 								disabled={true}
 							/>
 							<FormInput
-								label='Breed'
+								label='Size'
 								type='text'
-								id='breed'
-								name='breed'
+								id='size'
+								name='size'
 								placeholder='Select breed'
 								disabled={true}
 							/>
+							<span>
 							<FormInput
-								label='Gender'
-								type='text'
-								id='gender'
-								name='gender'
-								disabled={true}
-							/>
+									label='Rescue Date'
+									type='text'
+									id='rescueDate'
+									name='rescueDate'
+									disabled={true}
+								/>
+							</span>
 						</div>
 					</section>
 

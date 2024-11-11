@@ -140,14 +140,14 @@
 	}
 }
 
-#rescuedInfoMain > #rescues > #headerSection {
+#rescuedInfoMain > #rescues > #headerForm {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
 }
-#rescuedInfoMain > #rescues > #headerSection > form {
+#rescuedInfoMain > #rescues > #headerForm > form {
 	display: flex;
 	justify-content: left;
 	align-items: center;
@@ -155,16 +155,16 @@
 	gap: 2rem;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #rescues > #headerSection {
+	#rescuedInfoMain > #rescues > #headerForm {
 		gap: 2rem;
 		flex-direction: column;
 	}
-	#rescuedInfoMain > #rescues > #headerSection > form {
+	#rescuedInfoMain > #rescues > #headerForm > form {
 		width: 100%;
 		justify-content: space-between;
 	}
-	#rescuedInfoMain > #rescues > #headerSection > form > .inputDiv,
-	#rescuedInfoMain > #rescues > #headerSection > form > .inputDiv > input {
+	#rescuedInfoMain > #rescues > #headerForm > form > .inputDiv,
+	#rescuedInfoMain > #rescues > #headerForm > form > .inputDiv > input {
 		width: 100%;
 	}
 }
@@ -194,7 +194,7 @@
 	filter: drop-shadow(0px 0px 0.5rem rgba(0, 0, 0, 0.5));
 }
 
-#rescuedInfoMain > #headerSection {
+#rescuedInfoMain > #headerForm {
 	position: sticky;
 	width: calc(100% - 8rem);
 	top: 2rem;
@@ -203,10 +203,10 @@
 	align-items: center;
 	flex-direction: row;
 	z-index: 1;
-	background-color: var(--primary-color);
+	background-color: var(--primary-complement);
 	color: var(--plain);
 }
-#rescuedInfoMain > #headerSection > div {
+#rescuedInfoMain > #headerForm > div {
 	display: flex;
 	justify-content: left;
 	align-items: center;
@@ -214,18 +214,65 @@
 	gap: 2rem;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #headerSection {
+	#rescuedInfoMain > #headerForm {
 		flex-direction: column;
 		gap: 2rem;
 		text-align: center;
 	}
-	#rescuedInfoMain > #headerSection > div {
+	#rescuedInfoMain > #headerForm > div {
 		width: 100%;
 		justify-content: space-between;
 	}
-	#rescuedInfoMain > #headerSection > div > .button {
+	#rescuedInfoMain > #headerForm > div > .button {
 		width: 100%;
 	}
+}
+
+#rescuedInfoMain > #applicationInfo {
+	width: calc(100% - 16rem);
+	padding: 4rem 4rem;
+	display: flex;
+	justify-content: left;
+	align-items: flex-start;
+	flex-direction: column;
+	gap: 2rem;
+}
+@media (max-width: 60rem) {
+	#rescuedInfoMain > #applicationInfo {
+		gap: 4rem;
+	}
+}
+#rescuedInfoMain > #applicationInfo > div .formInput {
+	width: max-content;
+	min-width: 20rem;
+	flex: 1;
+}
+@media (max-width: 60rem) {
+	#rescuedInfoMain > #applicationInfo > div .formInput:has(textarea) {
+		width: 100%;
+		min-width: 100%;
+	}
+}
+
+#rescuedInfoMain > #applicationInfo > .formCheckbox {
+	width: max-content;
+	min-width: 20rem;
+	flex: 1;
+	display: flex;
+	justify-content: left;
+	align-items: left;
+	flex-direction: row;
+	gap: 2rem;
+}
+
+#rescuedInfoMain > #applicationInfo > div {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-direction: row;
+	gap: 4rem;
+	margin-bottom: 4rem;
 }
 
 #rescuedInfoMain > #basicInfo {
@@ -234,34 +281,21 @@
 	display: flex;
 	justify-content: left;
 	align-items: flex-start;
-	flex-direction: row;
-	gap: 4rem;
-}
-#rescuedInfoMain > #basicInfo > div {
-	width: 100%;
-	display: flex;
-	justify-content: left;
-	align-items: center;
 	flex-direction: column;
 	gap: 2rem;
 }
-#rescuedInfoMain > #basicInfo > #image {
-	width: unset;
+
+#rescuedInfoMain > #basicInfo > .petForm {
+	width: 100%;
+    display: flex;
+    justify-content: stretch;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 4rem;
 }
-#rescuedInfoMain > #basicInfo > #image > #img {
-	width: 24rem;
-	height: 24rem;
-	border-radius: 2rem;
-	border: solid 0.5rem var(--semi-primary-complement);
-	background-color: var(--plain);
-	background-size: cover;
-	background-position: center;
-	filter: drop-shadow(0px 0px 0.5rem rgba(0, 0, 0, 0.5));
-}
-#rescuedInfoMain > #basicInfo > #image > input {
-	display: none;
-}
-#rescuedInfoMain > #basicInfo > div > span {
+
+#rescuedInfoMain > #basicInfo > .petForm > span {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
