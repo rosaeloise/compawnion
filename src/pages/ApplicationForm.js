@@ -48,10 +48,7 @@ class ApplicationForm extends React.Component {
 				document.getElementById('gender').value = personal.gender;
 				document.getElementById('ageYear').value = personal.age.year;
 				document.getElementById('ageMonth').value = personal.age.month;
-				document.getElementById('img').style.backgroundImage = `url(${personal.picture})`;
 
-				document.getElementById('personality').value = background.attributes;
-				document.getElementById('backgroundStory').value = background.rescueStory;
 				document.getElementById('rescueDate').value = background.rescueDate;
 				document.getElementById('weight').value = background.weight;
 				document.getElementById('size').value = background.size;
@@ -100,7 +97,7 @@ class ApplicationForm extends React.Component {
 	render() {
 		return (
 			<>
-				<form id='rescuedInfoMain'>
+				<form id='applicationInfoMain'>
 					<header id='headerForm'>
 						<h4>Application Form</h4>
 						<div>
@@ -113,7 +110,7 @@ class ApplicationForm extends React.Component {
 					</header>
 
 					<section id='applicationInfo'>
-						<h6>Application Form Agreement</h6>
+						<h5>Application Form Agreement</h5>
 						<p>Application form agreement example here. Do you agree with conditions?</p>
 						<div className='formCheckbox'>
 							<FormInput
@@ -124,7 +121,7 @@ class ApplicationForm extends React.Component {
 							/>
 						</div>
 
-						<h6>Adoption Fee Payment Agreement</h6>
+						<h5>Adoption Fee Payment Agreement</h5>
 						<p>Adoption fee payment agreement example here. Do you agree with conditions?</p>
 						<div className='formCheckbox'>
 							<FormInput
@@ -132,6 +129,17 @@ class ApplicationForm extends React.Component {
 								type='checkbox'
 								id='paymentAgreement'
 								name='paymentAgreement'
+							/>
+						</div>
+
+						<h5>Compawnion App Agreement</h5>
+						<p>Application form agreement example here. Do you agree with conditions?</p>
+						<div className='formCheckbox'>
+							<FormInput
+								label='I agree to the terms and conditions'
+								type='checkbox'
+								id='agreement'
+								name='agreement'
 							/>
 						</div>
 
@@ -167,10 +175,7 @@ class ApplicationForm extends React.Component {
 					</section>
 
 					<section id='basicInfo'>
-						<h6>Pet Information</h6>
-						<div id='image'>
-							<div id='img' />
-						</div>
+						<h5>Pet Information</h5>
 						<div className='petForm'>
 							<FormInput
 								label='Pet ID'
@@ -228,6 +233,7 @@ class ApplicationForm extends React.Component {
 									name='ageMonth'
 									disabled={true}
 								/>
+								<h6>Months</h6>
 							</span>
 						</div>
 						<div className='petForm'>
@@ -258,121 +264,309 @@ class ApplicationForm extends React.Component {
 						</div>
 					</section>
 
-					<section id='backgroundInfo'>
-						<h6>Background</h6>
+					<section className='backgroundInfo'>
+						<h5>Basic Information</h5 >
 						<div>
 							<FormInput
-								label='Attributes/Personality'
-								type='textarea'
-								id='personality'
-								name='personality'
-								disabled={true}
-							/>
-							<FormInput
-								label='Rescue Story'
-								type='textarea'
-								id='backgroundStory'
-								name='backgroundStory'
-								disabled={true}
-							/>
-							<FormInput
-								label='Rescue Date'
-								type='date'
-								id='rescueDate'
-								name='rescueDate'
-								disabled={true}
-							/>
-						</div>
-
-						<h6>Medical Information</h6>
-						<div>
-							<FormInput
-								label='Weight'
-								type='number'
-								id='weight'
-								name='weight'
-								disabled={true}
-							/>
-							<h6>Kg</h6>
-							<FormInput
-								label='Size'
+								label='First Name'
 								type='text'
-								id='size'
-								name='size'
-								disabled={true}
+								id='fistName'
+								name='firstName'
+							/>
+							<FormInput
+								label='Middle Name'
+								type='text'
+								id='middleName'
+								name='middleName'
+							/>
+							<FormInput
+								label='Last Name'
+								type='text'
+								id='lastName'
+								name='lastName'
 							/>
 						</div>
 
-						<h6>Vaccination</h6>
-						<div id='vaccination'>
-							{this.state.vaccination.map((vaccination, index) => (
-								<div key={index}>
-									<FormInput
-										label='Name'
-										type='text'
-										id='vaccinationName'
-										name='vaccinationName'
-										placeholder='No Vaccination Available'
-										value={vaccination.name}
-										disabled={true}
-									/>
-									<FormInput
-										label='Date'
-										type='text'
-										id='vaccinationDate'
-										name='vaccinationDate'
-										placeholder='No Available Date'
-										value={vaccination.date}
-										disabled={true}
-									/>
-									<FormInput
-										label='Expiry'
-										type='text'
-										id='vaccinationExpiry'
-										name='vaccinationExpiry'
-										placeholder='No Available Expiry'
-										value={vaccination.expiry}
-										disabled={true}
-									/>
-								</div>
-							))}
+						<div>
+							<FormInput
+								label='Birthdate'
+								type='date'
+								id='birthdate'
+								name='birthdate'
+							/>
+							<FormInput
+								label='Occupation'
+								type='text'
+								id='occupation'
+								name='occupation'
+							/>
 						</div>
 
-						<h6>Medical History</h6>
-						<div id='medicalHistory'>
-							{this.state.medicalHistory.map((medicalHistory, index) => (
-								<div key={index}>
-									<FormInput
-										label='Procedure'
-										type='text'
-										id='medicalHistoryProcedure'
-										name='medicalHistoryProcedure'
-										placeholder='No Available Procedure'
-										value={medicalHistory.procedure}
-										disabled={true}
-									/>
-									<FormInput
-										label='Date'
-										type='text'
-										id='medicalHistoryDate'
-										name='medicalHistoryDate'
-										placeholder='No Available Date'
-										value={medicalHistory.date}
-										disabled={true}
-									/>
-									<span>
-										<FormInput
-											label='Notes'
-											type='textarea'
-											id='medicalHistoryNotes'
-											name='medicalHistoryNotes'
-											placeholder='No Available Notes'
-											value={medicalHistory.notes}
-											disabled={true}
-										/>
-									</span>
-								</div>
-							))}
+						<h5 > Address Information</h5 >
+						<div>
+							<FormInput
+								label='Country'
+								type='dropdown'
+								id='country'
+								name='country'
+
+								options={[
+									{
+										value: 'Philippines',
+										label: 'Philippines'
+									},
+								]}
+							/>
+							<FormInput
+								label='Province'
+								type='dropdown'
+								id='province'
+								name='province'
+								options={[
+									{
+										value: 'Rizal',
+										label: 'Rizal'
+									},
+								]}
+							/>
+							<FormInput
+								label='City/Municipality'
+								type='dropdown'
+								id='municipality'
+								name='municipality'
+								options={[
+									{
+										value: 'Rodriguez',
+										label: 'Rodriguez',
+									},
+								]}
+							/>
+							<FormInput
+								label='Barangay'
+								type='dropdown'
+								id='Barangay'
+								name='Barangay'
+								options={[
+									{
+										value: 'San Jose',
+										label: 'San Jose',
+									},
+									{
+										value: 'San Rafael',
+										label: 'San Rafael',
+									},
+									{
+										value: 'San Isidro',
+										label: 'San Isidro',
+									},
+									{
+										value: 'San Juan',
+										label: 'San Juan',
+									},
+									{
+										value: 'San Luis',
+										label: 'San Luis',
+									},
+									{
+										value: 'San Roque',
+										label: 'San Roque',
+									}
+								]}
+							/>
+						</div>
+
+						<div>
+							<FormInput
+								label='Street/Block/Building'
+								type='text'
+								id='street'
+								name='street'
+							/>
+							<FormInput
+								label='Lot/Floor/Unit'
+								type='text'
+								id='lot'
+								name='lot'
+							/>
+						</div>
+
+						<h5 > Contact Information</h5 >
+						<div>
+							<FormInput
+								label='Email Address'
+								type='text'
+								id='email'
+								name='email'
+							/>
+							<FormInput
+								label='Phone Number'
+								type='number'
+								id='phoneNum'
+								name='phoneNum'
+							/>
+							<FormInput
+								label='Facebook Account (Link)'
+								type='text'
+								id='facebook'
+								name='facebook'
+							/>
+						</div>
+					</section>
+
+					<section className='backgroundInfo'>
+						<h5>Dwelling Information</h5 >
+						<div>
+							<FormInput
+								label='Type of Dwelling'
+								type='dropdown'
+								id='dwellingType'
+								name='dwellingType'
+
+								options={[
+									{
+										value: 'Single-Storey House/Bungalow',
+										label: 'Single-Storey House/Bungalow'
+									},
+									{
+										value: 'Apartment',
+										label: 'Apartment',
+									},
+									{
+										value: 'Condominium',
+										label: 'Condominium',
+									},
+									{
+										value: 'Townhouse',
+										label: 'Townhouse',
+									},
+									{
+										value: 'Multi-Storey House',
+										label: 'Multi-Storey House',
+									},
+								]}
+							/>
+							<FormInput
+								label='Ownership'
+								type='dropdown'
+								id='ownership'
+								name='ownership'
+
+								options={[
+									{
+										value: 'Owned',
+										label: 'Owned'
+									},
+									{
+										value: 'Rented',
+										label: 'Rented',
+									},
+									{
+										value: 'Living with Relatives',
+										label: 'Living with Relatives',
+									},
+								]}
+							/>
+							<FormInput
+								label='No. of House Members'
+								type='number'
+								id='numberOfHouseMembers'
+								name='numberOfHouseMembers'
+							/>
+						</div>
+
+						<div>
+							<FormInput
+								label='No. of Pets in the Household (If any)'
+								type='dropdown'
+								id='numberOfPets'
+								name='numberOfPets'
+
+								options={[
+									{
+										value: 'None',
+										label: 'None'
+									},
+									{
+										value: '1-2',
+										label: '1-2',
+									},
+									{
+										value: '3-4',
+										label: '3-4',
+									},
+									{
+										value: '5 or more',
+										label: '5 or more',
+									},
+								]}
+							/>
+							<FormInput
+								label='Have you confirmed that you are allowed to have pets in the house?'
+								type='dropdown'
+								id='planningToMoveOut'
+								name='planningToMoveOut'
+
+								options={[
+									{
+										value: 'Yes',
+										label: 'Yes'
+									},
+									{
+										value: 'No',
+										label: 'No',
+									},
+								]}
+							/>
+							<FormInput
+								label='Are you planning to move out in the next 6 months?'
+								type='dropdown'
+								id='petsAllowedInHouse'
+								name='petsAllowedInHouse'
+
+								options={[
+									{
+										value: 'Yes',
+										label: 'Yes'
+									},
+									{
+										value: 'No',
+										label: 'No',
+									},
+								]}
+							/>
+						</div>
+					</section>
+
+					<section className='backgroundInfo'>
+						<h5>Pet Care</h5 >
+						<div>
+							<FormInput
+								label='Pet Ownership Experience'
+								type='dropdown'
+								id='petOwnershipExperience'
+								name='petOwnershipExperience'
+
+								options={[
+									{
+										value: 'First Time/New pet-owner',
+										label: 'First Time/New pet-owner'
+									},
+									{
+										value: 'Recent pet-owner (Owned a pet 3 years or less)',
+										label: 'Recent pet-owner (Owned a pet 3 years or less)',
+									},
+									{
+										value: 'Experienced (Owned a pet more than 3 years)',
+										label: 'Experienced (Owned a pet more than 3 years)',
+									},
+								]}
+							/>
+							<FormInput
+								label='Input a Veterinarian Clinic for your pet'
+								type='textbox'
+								id='veterinaryClinicName'
+								name='veterinaryClinicName'
+							/>
 						</div>
 					</section>
 

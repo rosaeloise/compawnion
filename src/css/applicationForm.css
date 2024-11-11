@@ -1,10 +1,10 @@
 
-#sidebarToggle:checked ~ #rescuedInfoMain {
+#sidebarToggle:checked ~ #applicationInfoMain {
 	width: calc(100% - 8rem - 16rem);
 	left: 8rem;
 }
 
-#rescuedInfoMain {
+#applicationInfoMain {
 	position: absolute;
 	width: calc(100% - 16rem);
 	min-height: calc(100% - 16rem);
@@ -22,23 +22,23 @@
 }
 
 @media (max-width: 75rem) {
-	#sidebarToggle:checked ~ #rescuedInfoMain {
+	#sidebarToggle:checked ~ #applicationInfoMain {
 		width: calc(100% - 8rem);
 		left: 8rem;
 	}
 
-	#rescuedInfoMain {
+	#applicationInfoMain {
 		width: calc(100% - 16rem);
 		left: 0;
 	}
 }
 @media (max-width: 60rem) {
-	#sidebarToggle:checked ~ #rescuedInfoMain {
+	#sidebarToggle:checked ~ #applicationInfoMain {
 		width: calc(100% - 8rem);
 		left: 0;
 	}
 
-	#rescuedInfoMain {
+	#applicationInfoMain {
 		width: calc(100% - 8rem);
 		left: 0;
 		padding: 4rem;
@@ -46,13 +46,13 @@
 	}
 }
 @media (max-width: 40rem) {
-	#rescuedInfoMain {
+	#applicationInfoMain {
 		width: calc(100% - 8rem);
 		gap: 2rem;
 	}
 }
 
-#rescuedInfoMain > #filter {
+#applicationInfoMain > #filter {
 	position: relative;
 	width: calc(100% - 8rem);
 	padding: 2rem 4rem;
@@ -67,7 +67,7 @@
 
 	overflow: hidden;
 }
-#rescuedInfoMain > #filter > svg {
+#applicationInfoMain > #filter > svg {
 	position: absolute;
 	width: 40rem;
 	height: 40rem;
@@ -75,7 +75,7 @@
 	left: 75%;
 	z-index: -1;
 }
-#rescuedInfoMain > #filter > div {
+#applicationInfoMain > #filter > div {
 	width: 75%;
 	display: flex;
 	justify-content: left;
@@ -83,14 +83,14 @@
 	flex-direction: row;
 	gap: 2rem;
 }
-#rescuedInfoMain > #filter > div > * {
+#applicationInfoMain > #filter > div > * {
 	width: 100%;
 	display: block;
 }
-#rescuedInfoMain > #filter > div > input {
+#applicationInfoMain > #filter > div > input {
 	display: none;
 }
-#rescuedInfoMain > #filter > div > label {
+#applicationInfoMain > #filter > div > label {
 	padding: 0.5rem 4rem;
 	display: inline-flex;
 	justify-content: center;
@@ -101,32 +101,32 @@
 	background-color: var(--white);
 	border-radius: 10rem;
 }
-#rescuedInfoMain > #filter > div > label:hover {
+#applicationInfoMain > #filter > div > label:hover {
 	background-color: var(--primary-complement);
 	color: var(--white);
 }
-#rescuedInfoMain > #filter > div > input:checked + label {
+#applicationInfoMain > #filter > div > input:checked + label {
 	background-color: var(--primary-complement);
 	color: var(--white);
 }
-#rescuedInfoMain > #filter > div > input:checked + label:hover {
+#applicationInfoMain > #filter > div > input:checked + label:hover {
 	background-color: var(--primary-complement);
 	color: var(--white);
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #filter {
+	#applicationInfoMain > #filter {
 		flex-direction: row;
 	}
-	#rescuedInfoMain > #filter > div {
+	#applicationInfoMain > #filter > div {
 		flex-direction: column;
 		text-align: center;
 	}
-	#rescuedInfoMain > #filter > div > label {
+	#applicationInfoMain > #filter > div > label {
 		width: calc(100% - 8rem);
 	}
 }
 
-#rescuedInfoMain > #rescues {
+#applicationInfoMain > #rescues {
 	width: 100%;
 	display: flex;
 	justify-content: left;
@@ -135,19 +135,19 @@
 	gap: 4rem;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #rescues {
+	#applicationInfoMain > #rescues {
 		gap: 2rem;
 	}
 }
 
-#rescuedInfoMain > #rescues > #headerForm {
+#applicationInfoMain > #rescues > #headerForm {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
 }
-#rescuedInfoMain > #rescues > #headerForm > form {
+#applicationInfoMain > #rescues > #headerForm > form {
 	display: flex;
 	justify-content: left;
 	align-items: center;
@@ -155,20 +155,20 @@
 	gap: 2rem;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #rescues > #headerForm {
+	#applicationInfoMain > #rescues > #headerForm {
 		gap: 2rem;
 		flex-direction: column;
 	}
-	#rescuedInfoMain > #rescues > #headerForm > form {
+	#applicationInfoMain > #rescues > #headerForm > form {
 		width: 100%;
 		justify-content: space-between;
 	}
-	#rescuedInfoMain > #rescues > #headerForm > form > .inputDiv,
-	#rescuedInfoMain > #rescues > #headerForm > form > .inputDiv > input {
+	#applicationInfoMain > #rescues > #headerForm > form > .inputDiv,
+	#applicationInfoMain > #rescues > #headerForm > form > .inputDiv > input {
 		width: 100%;
 	}
 }
-#rescuedInfoMain > #rescues > #petCards {
+#applicationInfoMain > #rescues > #petCards {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -178,7 +178,7 @@
 	gap: 4rem;
 }
 
-#rescuedInfoMain {
+#applicationInfoMain {
 	display: flex;
 	justify-content: left;
 	align-items: center;
@@ -186,7 +186,7 @@
 	gap: 4rem;
 }
 
-#rescuedInfoMain > * {
+#applicationInfoMain > * {
 	width: calc(100% - 8rem);
 	padding: 2rem 4rem;
 	border-radius: 2rem;
@@ -194,7 +194,7 @@
 	filter: drop-shadow(0px 0px 0.5rem rgba(0, 0, 0, 0.5));
 }
 
-#rescuedInfoMain > #headerForm {
+#applicationInfoMain > #headerForm {
 	position: sticky;
 	width: calc(100% - 8rem);
 	top: 2rem;
@@ -206,7 +206,7 @@
 	background-color: var(--primary-complement);
 	color: var(--plain);
 }
-#rescuedInfoMain > #headerForm > div {
+#applicationInfoMain > #headerForm > div {
 	display: flex;
 	justify-content: left;
 	align-items: center;
@@ -214,21 +214,21 @@
 	gap: 2rem;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #headerForm {
+	#applicationInfoMain > #headerForm {
 		flex-direction: column;
 		gap: 2rem;
 		text-align: center;
 	}
-	#rescuedInfoMain > #headerForm > div {
+	#applicationInfoMain > #headerForm > div {
 		width: 100%;
 		justify-content: space-between;
 	}
-	#rescuedInfoMain > #headerForm > div > .button {
+	#applicationInfoMain > #headerForm > div > .button {
 		width: 100%;
 	}
 }
 
-#rescuedInfoMain > #applicationInfo {
+#applicationInfoMain > #applicationInfo {
 	width: calc(100% - 16rem);
 	padding: 4rem 4rem;
 	display: flex;
@@ -238,23 +238,23 @@
 	gap: 2rem;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #applicationInfo {
+	#applicationInfoMain > #applicationInfo {
 		gap: 4rem;
 	}
 }
-#rescuedInfoMain > #applicationInfo > div .formInput {
+#applicationInfoMain > #applicationInfo > div .formInput {
 	width: max-content;
 	min-width: 20rem;
 	flex: 1;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #applicationInfo > div .formInput:has(textarea) {
+	#applicationInfoMain > #applicationInfo > div .formInput:has(textarea) {
 		width: 100%;
 		min-width: 100%;
 	}
 }
 
-#rescuedInfoMain > #applicationInfo > .formCheckbox {
+#applicationInfoMain > #applicationInfo > .formCheckbox {
 	width: max-content;
 	min-width: 20rem;
 	flex: 1;
@@ -265,7 +265,7 @@
 	gap: 2rem;
 }
 
-#rescuedInfoMain > #applicationInfo > div {
+#applicationInfoMain > #applicationInfo > div {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -275,7 +275,7 @@
 	margin-bottom: 4rem;
 }
 
-#rescuedInfoMain > #basicInfo {
+#applicationInfoMain > #basicInfo {
 	width: calc(100% - 16rem);
 	padding: 4rem 4rem;
 	display: flex;
@@ -285,7 +285,7 @@
 	gap: 2rem;
 }
 
-#rescuedInfoMain > #basicInfo > .petForm {
+#applicationInfoMain > #basicInfo > .petForm {
 	width: 100%;
     display: flex;
     justify-content: stretch;
@@ -295,7 +295,7 @@
     gap: 4rem;
 }
 
-#rescuedInfoMain > #basicInfo > .petForm > span {
+#applicationInfoMain > #basicInfo > .petForm > span {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -304,19 +304,19 @@
 	gap: 2rem;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #basicInfo {
+	#applicationInfoMain > #basicInfo {
 		flex-direction: column;
 		gap: 4rem;
 	}
-	#rescuedInfoMain > #basicInfo > div {
+	#applicationInfoMain > #basicInfo > div {
 		width: 100%;
 	}
-	#rescuedInfoMain > #basicInfo > #image {
+	#applicationInfoMain > #basicInfo > #image {
 		width: 100%;
 	}
 }
 
-#rescuedInfoMain > #backgroundInfo {
+#applicationInfoMain > .backgroundInfo {
 	width: calc(100% - 16rem);
 	padding: 4rem 4rem;
 	display: flex;
@@ -326,22 +326,22 @@
 	gap: 2rem;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #backgroundInfo {
+	#applicationInfoMain > .backgroundInfo {
 		gap: 4rem;
 	}
 }
-#rescuedInfoMain > #backgroundInfo > div .formInput {
+#applicationInfoMain > .backgroundInfo > div .formInput {
 	width: max-content;
 	min-width: 20rem;
 	flex: 1;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #backgroundInfo > div .formInput:has(textarea) {
+	#applicationInfoMain > .backgroundInfo > div .formInput:has(textarea) {
 		width: 100%;
 		min-width: 100%;
 	}
 }
-#rescuedInfoMain > #backgroundInfo > div {
+#applicationInfoMain > .backgroundInfo > div {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -350,9 +350,9 @@
 	gap: 4rem;
 	margin-bottom: 4rem;
 }
-#rescuedInfoMain > #backgroundInfo > div:first-child,
-#rescuedInfoMain > #backgroundInfo > #vaccination,
-#rescuedInfoMain > #backgroundInfo > #medicalHistory {
+#applicationInfoMain > .backgroundInfo > div:first-child,
+#applicationInfoMain > .backgroundInfo > #vaccination,
+#applicationInfoMain > .backgroundInfo > #medicalHistory {
 	width: 100%;
 	display: flex;
 	justify-content: left;
@@ -360,9 +360,9 @@
 	flex-direction: column;
 	gap: 4rem;
 }
-#rescuedInfoMain > #backgroundInfo > :nth-child(2),
-#rescuedInfoMain > #backgroundInfo > #vaccination > div,
-#rescuedInfoMain > #backgroundInfo > #medicalHistory > div {
+#applicationInfoMain > .backgroundInfo > :nth-child(2),
+#applicationInfoMain > .backgroundInfo > #vaccination > div,
+#applicationInfoMain > .backgroundInfo > #medicalHistory > div {
 	width: 100%;
 	display: flex;
 	justify-content: stretch;
@@ -371,11 +371,11 @@
 	flex-wrap: wrap;
 	gap: 4rem;
 }
-#rescuedInfoMain > #backgroundInfo > #vaccination > div > .button,
-#rescuedInfoMain > #backgroundInfo > #medicalHistory > div > .button {
+#applicationInfoMain > .backgroundInfo > #vaccination > div > .button,
+#applicationInfoMain > .backgroundInfo > #medicalHistory > div > .button {
 	margin-top: 4rem;
 }
-#rescuedInfoMain > #backgroundInfo > #medicalHistory span {
+#applicationInfoMain > .backgroundInfo > #medicalHistory span {
 	width: 100%;
 	display: flex;
 	justify-content: left;
@@ -384,21 +384,21 @@
 	gap: 2rem;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #backgroundInfo > #medicalHistory .formInput:has(textarea) {
+	#applicationInfoMain > .backgroundInfo > #medicalHistory .formInput:has(textarea) {
 		width: 100%;
 		min-width: unset;
 	}
 }
 
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #backgroundInfo > :nth-child(2),
-	#rescuedInfoMain > #backgroundInfo > #vaccination > div,
-	#rescuedInfoMain > #backgroundInfo > #medicalHistory > div {
+	#applicationInfoMain > .backgroundInfo > :nth-child(2),
+	#applicationInfoMain > .backgroundInfo > #vaccination > div,
+	#applicationInfoMain > .backgroundInfo > #medicalHistory > div {
 		gap: 4rem;
 	}
 }
 
-#rescuedInfoMain > #action {
+#applicationInfoMain > #action {
 	width: calc(100% - 8rem);
 	display: flex;
 	justify-content: left;
@@ -409,7 +409,7 @@
 	background-color: unset;
 	filter: unset;
 }
-#rescuedInfoMain > #action > div {
+#applicationInfoMain > #action > div {
 	width: 100%;
 	display: flex;
 	justify-content: left;
@@ -417,18 +417,18 @@
 	flex-direction: row;
 	gap: 2rem;
 }
-#rescuedInfoMain > #action > div .button {
+#applicationInfoMain > #action > div .button {
 	margin-top: 4rem;
 }
 @media (max-width: 60rem) {
-	#rescuedInfoMain > #action {
+	#applicationInfoMain > #action {
 		gap: 4rem;
 	}
-	#rescuedInfoMain > #action > div {
+	#applicationInfoMain > #action > div {
 		flex-direction: column;
 		gap: 2rem;
 	}
-	#rescuedInfoMain > #action > div .button {
+	#applicationInfoMain > #action > div .button {
 		width: 100%;
 		margin: unset;
 	}
