@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../components/Button';
 import FormInput from '../components/FormInput';
-import '../css/rescuedInfo.css';
+import '../css/applicationForm.css';
 
 class ApplicationForm extends React.Component {
 	constructor(props) {
@@ -48,7 +48,6 @@ class ApplicationForm extends React.Component {
 				document.getElementById('gender').value = personal.gender;
 				document.getElementById('ageYear').value = personal.age.year;
 				document.getElementById('ageMonth').value = personal.age.month;
-				document.getElementById('img').style.backgroundImage = `url(${personal.picture})`;
 
 				document.getElementById('personality').value = background.attributes;
 				document.getElementById('backgroundStory').value = background.rescueStory;
@@ -105,26 +104,37 @@ class ApplicationForm extends React.Component {
 						<h4>Application Form</h4>
 						<div>
 							<Button
-								title='Back'
+								title='Cancel'
 								fill='outline'
-								href='/adopt'
+								href={`/rescues/${this.state.petID}`}
 							/>
 						</div>
 					</header>
 
 					<section id='basicInfo'>
-						<div id='image'>
-							<div id='img' />
-						</div>
-
 						<div>
 							<FormInput
-								label='Name'
-								type='text'
+								label='Application Type'
+								type='dropdown'
 								id='name'
 								name='name'
-								disabled={true}
+
+								options={[
+									{
+										value: 'Online Application',
+										label: 'Online Application'
+									},
+									{
+										value: 'Onsite Application',
+										label: 'Onsite Application',
+									}
+								]}
 							/>
+							<div>
+								<h6>
+									Application Form Agreement
+								</h6>
+							</div>
 							<FormInput
 								label='Type'
 								type='text'
