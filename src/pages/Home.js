@@ -169,6 +169,7 @@ class Home extends React.Component {
 								image={pet.image}
 								name={pet.name}
 								description={pet.description}
+								href={pet.href}
 							/>
 						)) : <p>Loading...</p>}
 					</div>
