@@ -39,10 +39,13 @@ class RescuedInfo extends React.Component {
 				const personal = res.personal;
 				const background = res.background;
 
+				this.setState({ petID: res.petId });
+
 				document.getElementById('petID').value = res.petId;
 				document.getElementById('name').value = personal.name;
 				document.getElementById('type').value = personal.type;
 				document.getElementById('breed').value = personal.breed;
+				document.getElementById('gender').value = personal.gender;
 				document.getElementById('ageYear').value = personal.age.year;
 				document.getElementById('ageMonth').value = personal.age.month;
 				document.getElementById('img').style.backgroundImage = `url(${personal.picture})`;
@@ -98,7 +101,7 @@ class RescuedInfo extends React.Component {
 		return (
 			<>
 				<form id='rescuedInfoMain'>
-					<header id='header'>
+					<header id='headerSection'>
 						<h4>Pet Information</h4>
 						<div>
 							<Button
@@ -296,7 +299,7 @@ class RescuedInfo extends React.Component {
 						<Button
 							title='Adopt'
 							theme='light'
-							href={`/adopt/${this.state.petID}`}
+							href={`/application/${this.state.petID}`}
 						/>
 					</section>
 				</form>

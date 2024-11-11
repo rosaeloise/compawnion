@@ -94,7 +94,7 @@ span {
 }
 .button.outlined {
 	border: solid 0.5rem var(--primary-complement);
-	background-color: unset;
+	background-color: var(--plain);
 	color: var(--primary-complement);
 }
 .button.outlined:hover {
