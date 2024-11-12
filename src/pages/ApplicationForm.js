@@ -76,91 +76,101 @@ class ApplicationForm extends React.Component {
 			});
 		}
 
-		// const submitButton = document.getElementById('submit');
-		// submitButton.addEventListener('click', () => {
-		// 	const applicationType = document.getElementById('applicationType').value;
-		// 	const appPetID = document.getElementById('appPetID').value;
-		// 	const agreement = document.getElementById('agreement').checked;
-		// 	const paymentAgreement = document.getElementById('paymentAgreement').checked;
+		const submitButton = document.getElementById('submit');
+		submitButton.onclick = () => {
+			const data = {
+				termsAndCondission: '',
+				paymentAgreement: '',
+				applicationType: '',
+				appPetID: '',
+				petId: '',
+				applicant: {
+					name: {
+						firstName: '',
+						middleName: '',
+						lastName: ''
+					},
+					birthdate: '',
+					occupation: '',
+					address: {
+						country: '',
+						province: '',
+						cityOrMunicipality: '',
+						baranggay: '',
+						street: '',
+						lot: ''
+					},
+					contact: {
+						email: '',
+						phoneNumber: '',
+						facebook: ''
+					}
+				},
+				dwelling: {
+					type: '',
+					ownership: '',
+					numberOfHouseMembers: '',
+					numberOfPets: '',
+					petsAllowedInHouse: '',
+					planningToMoveOut: ''
+				},
+				petCare: {
+					petOwnershipExperience: '',
+					veterinarian: ''
+				}
+			};
 
+			data.termsAndCondission = document.getElementById('agreement').checked;
+			data.paymentAgreement = document.getElementById('paymentAgreement').checked;
+			data.applicationType = document.getElementById('applicationType').value;
+			data.appPetID = document.getElementById('appPetID').value;
+			data.petId = document.getElementById('petID').value;
 
-		// 	const firstName = document.getElementById('fistName').value;
-		// 	const middleName = document.getElementById('middleName').value;
-		// 	const lastName = document.getElementById('lastName').value;
-		// 	const birthdate = document.getElementById('birthdate').value;
-		// 	const occupation = document.getElementById('occupation').value;
-		// 	const country = document.getElementById('country').value;
-		// 	const province = document.getElementById('province').value;
-		// 	const municipality = document.getElementById('municipality').value;
-		// 	const barangay = document.getElementById('Barangay').value;
-		// 	const street = document.getElementById('street').value;
-		// 	const lot = document.getElementById('lot').value;
-		// 	const email = document.getElementById('email').value;
-		// 	const phoneNum = document.getElementById('phoneNum').value;
-		// 	const facebook = document.getElementById('facebook').value;
+			data.applicant.name.firstName = document.getElementById('fistName').value;
+			data.applicant.name.middleName = document.getElementById('middleName').value;
+			data.applicant.name.lastName = document.getElementById('lastName').value;
+			data.applicant.birthdate = document.getElementById('birthdate').value;
+			data.applicant.occupation = document.getElementById('occupation').value;
+			data.applicant.address.country = document.getElementById('country').value;
+			data.applicant.address.province = document.getElementById('province').value;
+			data.applicant.address.cityOrMunicipality = document.getElementById('municipality').value;
+			data.applicant.address.baranggay = document.getElementById('Barangay').value;
+			data.applicant.address.street = document.getElementById('street').value;
+			data.applicant.address.lot = document.getElementById('lot').value;
+			data.applicant.contact.email = document.getElementById('email').value;
+			data.applicant.contact.phoneNumber = document.getElementById('phoneNum').value;
+			data.applicant.contact.facebook = document.getElementById('facebook').value;
 
-		// 	const dwellingType = document.getElementById('dwellingType').value;
-		// 	const ownership = document.getElementById('ownership').value;
-		// 	const numberOfHouseMembers = document.getElementById('numberOfHouseMembers').value;
-		// 	const numberOfPets = document.getElementById('numberOfPets').value;
-		// 	const planningToMoveOut = document.getElementById('planningToMoveOut').value;
-		// 	const petsAllowedInHouse = document.getElementById('petsAllowedInHouse').value;
+			data.dwelling.type = document.getElementById('dwellingType').value;
+			data.dwelling.ownership = document.getElementById('ownership').value;
+			data.dwelling.numberOfHouseMembers = document.getElementById('numberOfHouseMembers').value;
+			data.dwelling.numberOfPets = document.getElementById('numberOfPets').value;
+			data.dwelling.petsAllowedInHouse = document.getElementById('petsAllowedInHouse').value;
+			data.dwelling.planningToMoveOut = document.getElementById('planningToMoveOut').value;
 
-		// 	const petOwnershipExperience = document.getElementById('petOwnershipExperience').value;
-		// 	const veterinaryClinicName = document.getElementById('veterinaryClinicName').value;
+			data.petCare.petOwnershipExperience = document.getElementById('petOwnershipExperience').value;
+			data.petCare.veterinarian = document.getElementById('veterinaryClinicName').value;
 
-		// 	const data = {
-		// 		applicationType: applicationType,
-		// 		appPetID: appPetID,
-		// 		agreement: agreement,
-		// 		paymentAgreement: paymentAgreement,
-		// 		// applicant: {
-		// 		// 	firstName: firstName,
-		// 		// 	middleName: middleName,
-		// 		// 	lastName: lastName,
-		// 		// 	birthdate: birthdate,
-		// 		// 	occupation: occupation,
-		// 		// 	country: country,
-		// 		// 	province: province,
-		// 		// 	municipality: municipality,
-		// 		// 	barangay: barangay,
-		// 		// 	street: street,
-		// 		// 	lot: lot,
-		// 		// 	email: email,
-		// 		// 	phoneNum: phoneNum,
-		// 		// 	facebook: facebook
-		// 		// },
-		// 		dwelling: {
-		// 			dwellingType: dwellingType,
-		// 			ownership: ownership,
-		// 			numberOfHouseMembers: numberOfHouseMembers,
-		// 			numberOfPets: numberOfPets,
-		// 			planningToMoveOut: planningToMoveOut,
-		// 			petsAllowedInHouse: petsAllowedInHouse,
-		// 		},
-		// 		petOwnershipExperience,
-		// 		veterinaryClinicName
-		// 	};
-
-		// 	fetch('http://localhost:3000/application', {
-		// 		method: 'POST',
-		// 		headers: {
-		// 			'Content-Type': 'application/json'
-		// 		},
-		// 		body: JSON.stringify(data)
-		// 	})
-		// 		.then(res => res.json())
-		// 		.then(res => {
-		// 			window.location.href = '/adopt';
-		// 		});
-		// });
-
+			fetch('http://localhost:3000/application', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(data)
+			}).then(res => res.json())
+				.then(response => {
+					if (response.message) {
+						window.location.href = '/adopt';
+					};
+				})
+				.catch(thisSem => console.log);
+		};
 	}
 
 	render() {
 		return (
 			<>
-				<form id='applicationInfoMain'>
+				<div id='applicationInfoMain'>
 					<header id='headerForm'>
 						<h4>Application Form</h4>
 						<div>
@@ -638,10 +648,9 @@ class ApplicationForm extends React.Component {
 							title='Submit'
 							theme='light'
 							id='submit'
-							href={`/adopt`}
 						/>
 					</section>
-				</form>
+				</div>
 			</>
 		);
 	}

@@ -9,6 +9,8 @@ class Button extends React.Component {
 
 					href={this.props.href}
 					title={this.props.title}
+
+					id={this.props.id}
 				>
 					{
 						this.props.size === 'small' ?
@@ -21,6 +23,9 @@ class Button extends React.Component {
 		return (
 			<button
 				className={`button ${this.props.fill === 'outline' ? 'outline' : 'fill'}`}
+
+				id={this.props.id}
+				onClick={this.props.onClick}
 			>
 				{
 					this.props.size === 'small' ?
