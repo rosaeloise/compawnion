@@ -43,9 +43,9 @@ class App extends React.Component {
             </p>
 
             <Button
-						href="https://drive.usercontent.google.com/download?id=1DEtV8WaNjZONH4S3eqOggLAYVuJ_LwqE&export=download&authuser=0&confirm=t&uuid=6909d618-8c92-4b36-9ccf-3982bd7f0f70&at=AENtkXbuZ2PEi11CrhKrmrlsPh7Y%3A1732869116667"
-              title="download"
-              id="dlbtn"
+				href="https://github.com/Barkcode-Compawnion/compawnion-app/releases/download/v.1.0.0/Compawnion.apk"
+              	title="download"
+              	id="dlbtn"
             >
               Download App
             </Button>
