@@ -1,0 +1,30 @@
+#aboutsection {
+  display: flex;
+  margin-top: 2%;
+  align-items: top;
+  height: 100vh;
+}
+
+#aboutpage {
+  text-align: center; 
+  font-size: 6rem; 
+  font-weight: 700;
+  line-height: 1.5; 
+  color: #c35e26; 
+  margin: 0; 
+}
+
+#aboutpage span {
+  display: inline-block; 
+  color: #45362f;
+}
+
+#description {
+  text-align: justify;
+  font-size: 0.5 rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #45362f;
+  padding-top: 2%;
+  padding-left: 10%;
+}
