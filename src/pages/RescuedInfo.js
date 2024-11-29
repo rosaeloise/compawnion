@@ -30,7 +30,7 @@ class RescuedInfo extends React.Component {
 	componentDidMount() {
 		const petIDFromURL = window.location.href.split('/').pop();
 		if (petIDFromURL) {
-			fetch(`http://localhost:3000/ra/${petIDFromURL}`, {
+			fetch(`https://compawnion-backend.onrender.com/ra/${petIDFromURL}`, {
 				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json'

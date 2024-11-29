@@ -18,7 +18,7 @@ class ApplicationForm extends React.Component {
 		//Get Rescue Animal Information
 		const petIDFromURL = window.location.href.split('/').pop();
 		if (petIDFromURL) {
-			fetch(`http://localhost:3000/ra/${petIDFromURL}`, {
+			fetch(`https://compawnion-backend.onrender.com/ra/${petIDFromURL}`, {
 				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json'
@@ -151,7 +151,7 @@ class ApplicationForm extends React.Component {
 			data.petCare.petOwnershipExperience = document.getElementById('petOwnershipExperience').value;
 			data.petCare.veterinarian = document.getElementById('veterinaryClinicName').value;
 
-			fetch('http://localhost:3000/application', {
+			fetch('https://compawnion-backend.onrender.com/application', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
