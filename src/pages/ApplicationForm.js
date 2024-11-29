@@ -29,9 +29,9 @@ class ApplicationForm extends React.Component {
 				const personal = res.personal;
 				const background = res.background;
 
-				this.setState({ petID: res.petId });
+				this.setState({ petID: petIDFromURL });
 
-				document.getElementById('petID').value = res.petId;
+				document.getElementById('petID').value = petIDFromURL;
 				document.getElementById('name').value = personal.name;
 				document.getElementById('type').value = personal.type;
 				document.getElementById('breed').value = personal.breed;
