@@ -14,6 +14,7 @@ import Home from './pages/Home';
 import Adopt from './pages/Adopt';
 import RescuedInfo from './pages/RescuedInfo';
 import ApplicationForm from './pages/ApplicationForm';
+import App from './pages/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,6 +27,7 @@ root.render(
 				<Route path='/adopt' element={<Adopt />} />
 				<Route path='/rescues/:id' element={<RescuedInfo />} />
 				<Route path='/application/:id' element={<ApplicationForm />} />
+				<Route path='/app' element={<App />} />
 				
 			</Routes>
 		</BrowserRouter>
