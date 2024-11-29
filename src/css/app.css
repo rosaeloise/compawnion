@@ -1,3 +1,45 @@
+#downloadapp {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10%;
+  align-items: top;
+  height: 100vh;
+  padding-right: 25%;
+}
+
 #appname {
-	color: blue;
+  text-align: left; /* Align the text content to the left */
+  font-size: 4rem; /* Adjust font size for both lines */
+  line-height: 1.5; /* Line spacing between the two lines */
+  color: #c35e26; /* Main text color */
+  margin: 0; /* Remove default margin for precise positioning */
+}
+
+#appname span {
+  display: inline-block; /* Group "Download Our" and "Compawnion App" into separate lines */
+  color: #45362f;
+}
+
+#pawprint {
+  position: absolute;
+  width: 40%;
+  height: 118.3%;
+  left: 0%;
+  top: 22%;
+}
+
+#cellphone {
+  position: absolute;
+  width: 30%;
+  height: 120%;
+  left: 0%;
+  top: 25%;
+}
+
+#description {
+  text-align: justify; /* Align the text content to the left */
+  font-size: 0.5 rem; /* Adjust font size for both lines */
+  line-height: 1.5; /* Line spacing between the two lines */
+  color: #c35e26; /* Main text color */
+  margin: 0; /* Remove default margin for precise positioning */
 }
