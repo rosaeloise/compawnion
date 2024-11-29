@@ -4,7 +4,7 @@
   margin-top: 10%;
   align-items: top;
   height: 100vh;
-  padding-right: 25%;
+  padding-left: 55%;
 }
 
 #appname {
@@ -37,9 +37,14 @@
 }
 
 #description {
-  text-align: justify; /* Align the text content to the left */
-  font-size: 0.5 rem; /* Adjust font size for both lines */
-  line-height: 1.5; /* Line spacing between the two lines */
-  color: #c35e26; /* Main text color */
-  margin: 0; /* Remove default margin for precise positioning */
+  text-align: justify;
+  font-size: 0.5 rem;
+  line-height: 1.5;
+  color: #c35e26;
+  padding-top: 5%;
+  width: 80%;
 }
+
+#dlbtn {
+	margin-top: 10%;
+  }

@@ -31,13 +31,24 @@ class App extends React.Component {
               Donec aliquet turpis ac arcu efficitur, ut dictum sem rhoncus.
               Nunc velit turpis, tincidunt eu posuere vel, blandit id magna.
               Maecenas vulputate molestie eros, nec pulvinar justo eleifend vel.
-              Vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Nam vitae venenatis elit. Mauris eu porta diam. Cras congue
-              tempus tempor. Donec aliquet turpis ac arcu efficitur, ut dictum
-              sem rhoncus. Nunc velit turpis, tincidunt eu posuere vel, blandit
-              id magna. Maecenas vulputate molestie eros, nec pulvinar justo
-              eleifend vel. Vestibulum.
+              Vestibulum.
+              <br />
+              <br />
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae
+              venenatis elit. Mauris eu porta diam. Cras congue tempus tempor.
+              Donec aliquet turpis ac arcu efficitur, ut dictum sem rhoncus.
+              Nunc velit turpis, tincidunt eu posuere vel, blandit id magna.
+              Maecenas vulputate molestie eros, nec pulvinar justo eleifend vel.
+              Vestibulum.
             </p>
+
+            <Button
+              href="https://github.com/Barkcode-Compawnion/compawnion/releases/download/v.1.0.0/Compawnion.apk"
+              title="download"
+              id="dlbtn"
+            >
+              Download App
+            </Button>
           </div>
         </section>
         <Footer active="home" />
