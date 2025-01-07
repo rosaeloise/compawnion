@@ -77,7 +77,8 @@ class ApplicationForm extends React.Component {
 		}
 
 		const submitButton = document.getElementById('submit');
-		submitButton.onclick = () => {
+		submitButton.onclick = (e) => {
+			e.target.disabled = true;
 			const data = {
 				termsAndCondission: '',
 				paymentAgreement: '',
@@ -159,11 +160,15 @@ class ApplicationForm extends React.Component {
 				body: JSON.stringify(data)
 			}).then(res => res.json())
 				.then(response => {
+					e.target.disabled = false;
 					if (response.message) {
 						window.location.href = '/adopt';
 					};
 				})
-				.catch(thisSem => console.log);
+				.catch(thisSem => {
+					console.log(thisSem);
+					e.target.disabled = false;
+				});
 		};
 	}
 
