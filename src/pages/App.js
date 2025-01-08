@@ -5,8 +5,6 @@ import Button from "../components/Button";
 import BRKPAW from "../assets/BRKPAW.png";
 import mobile from "../assets/mobileapp.png";
 
-import { Link } from "react-router-dom";
-
 import "../css/app.css";
 
 class App extends React.Component {
